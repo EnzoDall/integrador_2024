@@ -41,22 +41,7 @@
     --background: #ff0000;
   }
 /* Form Specific */
-.reservation-form {
-  background-color: #333; /* Slightly lighter form background */
-  padding: 20px;
-  border-radius: 10px; 
-  margin-top: 20px;
-}
-.reservation-form ion-item {
-  --background: transparent; 
-  --border-color: #555; 
-}
-.reservation-form ion-label {
-  color: lightgray; 
-}
-.reservation-form ion-button.submit-button {
-  margin-top: 20px;
-}
+
 
 .reservation-form {
   display: flex;
@@ -66,3 +51,12 @@
   margin: auto;         /* Center the form container itself */
 }
 
+.reservation-form {
+  ion-item {
+    margin-bottom: 15px;
+  }
+
+  .submit-button {
+    margin-top: 20px;
+  }
+}

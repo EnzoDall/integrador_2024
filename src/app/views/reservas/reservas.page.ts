@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-
+import { FirebaseService } from '../../firebase.service';  // Adicione esta linha
 
 @Component({
   selector: 'app-reservas',
@@ -10,22 +10,31 @@ import { NavController } from '@ionic/angular';
 export class ReservasPage {
 
   currentDate: string;
-  constructor(private navCtrl: NavController) {
-    this.currentDate = new Date().toDateString();
-  }
+  reserva: any = {
+    nome: '',
+    email: '',
+    numeroPessoas: null,
+    data: '',
+    horario: '',
+    tipoMesa: ''
+  };
 
+  constructor(private navCtrl: NavController, private firebaseService: FirebaseService) {  // Adicione private firebaseService: FirebaseService
+
+    const today = new Date();
+    this.currentDate = today.toISOString().split('T')[0];
+  }
 
   irParaLogin() {
     this.navCtrl.navigateForward('/login');
   }
 
   submitReserva() {
-    // Lógica para enviar a reserva
-
+    this.firebaseService.addReserva(this.reserva)
+      .then(() => {
+        console.log('Reserva adicionada com sucesso');
+        // Resetar o formulário ou mostrar uma mensagem de sucesso
+      })
+     
   }
-
-
-
-
 }
-

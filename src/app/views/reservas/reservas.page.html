@@ -11,48 +11,64 @@
 <ion-content fullscreen class="ion-padding"> 
   <form (submit)="submitReserva()" class="reservation-form"> 
     <ion-list lines="full"> 
+      <ion-item-divider>
+        <ion-label>Informações Pessoais</ion-label>
+      </ion-item-divider>
       <ion-item>
         <ion-label position="floating">Nome</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" required [(ngModel)]="reserva.nome" name="nome"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" required></ion-input>
+        <ion-input type="email" required [(ngModel)]="reserva.email" name="email"></ion-input>
       </ion-item>
+      
+      <ion-item-divider>
+        <ion-label>Detalhes da Reserva</ion-label>
+      </ion-item-divider>
       <ion-item>
         <ion-label>Número de Pessoas</ion-label>
-        <ion-select interface="popover" placeholder="Selecione">
+        <ion-select interface="popover" placeholder="Selecione" [(ngModel)]="reserva.numeroPessoas" name="numeroPessoas">
           <ion-select-option value="1">1</ion-select-option>
           <ion-select-option value="2">2</ion-select-option>
           <ion-select-option value="3">3</ion-select-option>
           <ion-select-option value="4">4</ion-select-option>
           <ion-select-option value="5">5</ion-select-option>
-          <ion-select-option valueselect-option value="6">6</ion-select-option> 
+          <ion-select-option value="6">6</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-datetime presentation="date" display-format="DD/MM/YYYY" picker-format="DD MMM YYYY" 
-              min="{{ currentDate }}" required></ion-datetime>
-
+        <ion-datetime 
+          presentation="date" 
+          display-format="DD/MM/YYYY" 
+          picker-format="DD MMM YYYY" 
+          [min]="currentDate" 
+          required 
+          [(ngModel)]="reserva.data" 
+          name="data">
+        </ion-datetime>
       </ion-item>
       <ion-item>
-          <ion-label position="floating">Horário Preferencial</ion-label>
+        <ion-label>Horário Preferencial</ion-label>
+        <ion-select interface="popover" placeholder="Selecione" [(ngModel)]="reserva.horario" name="horario">
+          <ion-select-option *ngFor="let time of ['18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30']" [value]="time">
+            {{ time }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
-
-      <ion-radio-group> 
-        <ion-item>
-          <ion-label>Horário Preferencial</ion-label>
-          <ion-select interface="popover" placeholder="Selecione">
-            <ion-select-option *ngFor="let time of ['18:45', '19:00', '20:00', '21:00', '21:50']" value="{{ time }}">
-              {{ time }}
-            </ion-select-option>
-          </ion-select>
-        </ion-item>
-        </ion-radio-group>
+      <ion-item>
+        <ion-label>Tipo de Mesa</ion-label>
+        <ion-select interface="popover" placeholder="Selecione" [(ngModel)]="reserva.tipoMesa" name="tipoMesa">
+          <ion-select-option value="a la carte">À La Carte</ion-select-option>
+          <ion-select-option value="rodizio">Rodízio</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-list>
-
-    <ion-button type="submit" expand="block" class="submit-button" color="danger">
+    <ion-button type="submit" expand="block" class="submit-button" color="danger" style="margin-top: 20px;">
       Reservar
     </ion-button>
   </form>
 </ion-content>
+
+        
+          
