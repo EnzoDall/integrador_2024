@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--padding: 20px;">
+  <form (ngSubmit)="fazerLogin(usuario, senha)">
+    <ion-item>
+      <ion-label position="floating">Usuário</ion-label>
+      <ion-input [(ngModel)]="usuario" name="usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha" name="senha"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" >Entrar</ion-button>
+    <p *ngIf="mostrarErro" class="error-message">Usuário ou senha incorretos</p>
+  </form>
+</ion-content>

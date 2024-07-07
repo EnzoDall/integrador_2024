@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">
+      <a href="/" style="text-decoration: none; color: inherit;">
+        Restaurante
+      </a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding"> 
+  <form (submit)="submitReserva()" class="reservation-form"> 
+    <ion-list lines="full"> 
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Número de Pessoas</ion-label>
+        <ion-select interface="popover" placeholder="Selecione">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option valueselect-option value="6">6</ion-select-option> 
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-datetime presentation="date" display-format="DD/MM/YYYY" picker-format="DD MMM YYYY" 
+              min="{{ currentDate }}" required></ion-datetime>
+
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Horário Preferencial</ion-label>
+      </ion-item>
+
+      <ion-radio-group> 
+        <ion-item>
+          <ion-label>Horário Preferencial</ion-label>
+          <ion-select interface="popover" placeholder="Selecione">
+            <ion-select-option *ngFor="let time of ['18:45', '19:00', '20:00', '21:00', '21:50']" value="{{ time }}">
+              {{ time }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-radio-group>
+    </ion-list>
+
+    <ion-button type="submit" expand="block" class="submit-button" color="danger">
+      Reservar
+    </ion-button>
+  </form>
+</ion-content>

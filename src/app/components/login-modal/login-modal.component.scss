@@ -1,0 +1,31 @@
+.login-modal {
+    --width: 350px; /* Largura definida */
+    --height: auto;  /* Altura automática */
+    --border-radius: 10px; 
+  
+    ion-toolbar {
+      --background: #3880ff;
+    }
+  
+    ion-content {
+      .form-group {
+        display: flex; /* Organiza os itens em coluna */
+        flex-direction: column;
+        gap: 10px;    /* Espaçamento entre os itens */
+      }
+  
+      ion-button {
+        margin-top: 20px;
+        color: #ff0000; /* Espaçamento superior do botão */
+      }
+    }
+  }
+  
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+  
+  
