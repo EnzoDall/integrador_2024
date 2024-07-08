@@ -5,22 +5,32 @@
         Restaurante
       </a>
     </ion-title>
-
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content fullscreen class="ion-padding">
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <ion-button 
+      *ngFor="let horario of horarios" 
+      (click)="toggleReservas(horario)" 
+      color="danger">
+      {{ horario }}
+    </ion-button>
+  </div>
   <ion-list lines="full">
-    <ion-item *ngFor="let reserva of reservas$ | async">
-      <ion-label>
-        <h2>{{ reserva.nome }}</h2>
-        <p>Email: {{ reserva.email }}</p>
-        <p>Número de Pessoas: {{ reserva.numeroPessoas }}</p>
-        <p>Data: {{ reserva.data | date: 'dd/MM/yyyy' }}</p>
-        <p>Horário: {{ reserva.horario }}</p>
-        <p>Tipo de Mesa: {{ reserva.tipoMesa }}</p>
-      </ion-label>
-    </ion-item>
+    <div *ngFor="let horario of horarios">
+      <div *ngIf="isReservasVisiveis(horario)">
+        <ion-item *ngFor="let reserva of reservasAgrupadas[horario]">
+          <ion-label>
+            <h2>{{ reserva.nome }}</h2>
+            <p>Email: {{ reserva.email }}</p>
+            <p>Número de Pessoas: {{ reserva.numeroPessoas }}</p>
+            <p>Data: {{ reserva.data | date: 'dd/MM/yyyy' }}</p>
+            <p>Horário: {{ reserva.horario }}</p>
+            <p>Tipo de Mesa: {{ reserva.tipoMesa }}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
   </ion-list>
 </ion-content>

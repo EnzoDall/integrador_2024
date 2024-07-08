@@ -12,7 +12,13 @@ export class FirebaseService {
   constructor(private firestore: AngularFirestore) { }
 
   addReserva(reserva: any) {
-    return this.firestore.collection(this.collectionName).add(reserva);
+    return this.firestore.collection('reservas').add(reserva);
+  }
+
+  getReservasPorDataETipo(data: string, tipoMesa: string) {
+    return this.firestore.collection('reservas', ref => 
+      ref.where('data', '==', data).where('tipoMesa', '==', tipoMesa)
+    ).get();
   }
 
   getReservas(): Observable<DocumentChangeAction<unknown>[]> {
