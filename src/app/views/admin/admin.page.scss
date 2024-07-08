@@ -28,3 +28,55 @@
   ion-toolbar {
     --background: #ff0000;
   }
+  
+  .dias-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: transparent;  /* Remove o fundo do container */
+  }
+  
+  .dia-item {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background: transparent;  /* Remove o fundo do item */
+  }
+  
+  .dia-button {
+    width: 100%;
+    height: 60px;  /* Aumenta a altura do botão */
+    font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+    --background: #f44336;
+    --border-radius: 20px;
+    color: white;
+  }
+  
+  .horarios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background: transparent;  /* Remove o fundo do container */
+  }
+  
+  .horario-button {
+    margin: 5px;
+    width: 120px;  /* Aumenta a largura do botão */
+    height: 60px;  /* Aumenta a altura do botão */
+    font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+    --background: #f44336;
+    --border-radius: 20px;
+  }
+  
+  .back-button {
+    margin: 20px 0;
+    width: 120px;  /* Aumenta a largura do botão */
+    height: 60px;  /* Aumenta a altura do botão */
+    font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+    --background: #f44336;
+    --border-radius: 20px;
+  }
+  

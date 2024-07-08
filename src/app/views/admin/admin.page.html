@@ -9,28 +9,42 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-  <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-    <ion-button 
-      *ngFor="let horario of horarios" 
-      (click)="toggleReservas(horario)" 
-      color="danger">
-      {{ horario }}
-    </ion-button>
+  <div *ngIf="!diaSelecionado" class="dias-container">
+    <ion-list>
+      <ion-item *ngFor="let dia of diasDisponiveis" (click)="selecionarDia(dia)" class="dia-item">
+        <ion-button fill="solid" expand="block" color="danger" class="dia-button">
+          {{ dia | date: 'dd/MM' }}
+        </ion-button>
+      </ion-item>
+    </ion-list>
   </div>
-  <ion-list lines="full">
-    <div *ngFor="let horario of horarios">
-      <div *ngIf="isReservasVisiveis(horario)">
-        <ion-item *ngFor="let reserva of reservasAgrupadas[horario]">
-          <ion-label>
-            <h2>{{ reserva.nome }}</h2>
-            <p>Email: {{ reserva.email }}</p>
-            <p>Número de Pessoas: {{ reserva.numeroPessoas }}</p>
-            <p>Data: {{ reserva.data | date: 'dd/MM/yyyy' }}</p>
-            <p>Horário: {{ reserva.horario }}</p>
-            <p>Tipo de Mesa: {{ reserva.tipoMesa }}</p>
-          </ion-label>
-        </ion-item>
-      </div>
+  
+  <div *ngIf="diaSelecionado">
+    <ion-button (click)="diaSelecionado = null" color="danger" class="back-button">Voltar</ion-button>
+    <div class="horarios-container">
+      <ion-button 
+        *ngFor="let horario of horarios" 
+        (click)="toggleReservas(horario)" 
+        color="danger"
+        class="horario-button">
+        {{ horario }}
+      </ion-button>
     </div>
-  </ion-list>
+    <ion-list lines="full">
+      <div *ngFor="let horario of horarios">
+        <div *ngIf="isReservasVisiveis(horario)">
+          <ion-item *ngFor="let reserva of reservasAgrupadas[diaSelecionado][horario]">
+            <ion-label>
+              <h2>{{ reserva.nome }}</h2>
+              <p>Email: {{ reserva.email }}</p>
+              <p>Número de Pessoas: {{ reserva.numeroPessoas }}</p>
+              <p>Data: {{ reserva.data | date: 'dd/MM/yyyy' }}</p>
+              <p>Horário: {{ reserva.horario }}</p>
+              <p>Tipo de Mesa: {{ reserva.tipoMesa }}</p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>
