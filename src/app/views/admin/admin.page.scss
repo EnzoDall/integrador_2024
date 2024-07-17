@@ -1,0 +1,127 @@
+ion-toolbar {
+  text-align: center;
+
+  --background: #c5000f;
+  text-transform: uppercase;
+  width: 1215px;
+  
+  
+}
+
+.dias-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  background: transparent;  /* Remove o fundo do container */
+}
+
+.dia-item {
+  margin: 10px;
+}
+
+.dia-button {
+  width: 250px;  /* Aumenta a largura do botão */
+  height:90px;  /* Aumenta a altura do botão */
+  font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+  --background: #f44336;  /* Cor de fundo do botão */
+  --border-radius: 20px;  /* Raio da borda do botão */
+  color: white;  /* Cor do texto */
+  text-align: center;
+}
+
+.horarios-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  background: transparent;  /* Remove o fundo do container */
+}
+
+.horario-button {
+  margin: 5px;
+   /* width: 150px; Aumenta a largura do botão */
+  /* height: 50px;  Aumenta a altura do botão */
+  font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+  --background: #f44336;  /* Cor de fundo do botão */
+  --border-radius: 20px;  /* Raio da borda do botão */
+  text-align: center;
+  height: 100px;
+  width: 200px;
+  
+  
+}
+
+ion-card-title{
+  text-align: center;
+  color: #e9e8e8;
+}
+ion-card-subtitle{
+  text-align: center;
+  color: #ffffff;
+}
+
+ion-button{
+  text-align: center;
+ 
+}
+
+.back-button {
+  margin: 20px 0;
+  width: 120px;  /* Aumenta a largura do botão */
+  height: 60px;  /* Aumenta a altura do botão */
+  font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+  --background: #f44336;  /* Cor de fundo do botão */
+  --border-radius: 20px;  /* Raio da borda do botão */
+}
+
+
+ion-content{
+  --background:#e9e8e8;
+  
+}
+
+ion-list{
+  border: 2px;
+  border-style: solid;
+  border-color: rgb(181, 181, 181);
+  border-inline-end-style: solid;
+  border-inline-end-color: #ad1621;
+  margin: 5px 5px 5px 5px;
+  --background:#e9e8e8;
+  border-radius: 5px;
+  --wheel-highlight-border-radius: 40px;
+   text-align: center;
+   border-style: solid;
+   border-width: medium;
+   left: auto;
+   right: 10;
+  width: auto;
+
+ }
+
+table, ion-item{
+  border-width: medium;
+  border: 1px solid #e9e8e8;
+  text-align: center;
+  border-collapse: collapse;
+  
+  padding: 10px;
+  border-radius: 2px;
+  text-align: center;
+  margin: 10px 10px 10px;
+  --background:#e9e8e8a0;
+
+  margin-right: 150px;
+  border-width: 2px 4px 6px 7px;
+
+}
+
+ion-heard{
+  
+  text-align: center;
+}
+
+
+
+

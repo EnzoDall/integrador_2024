@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+out-tsc/
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular specific
+.angular/
+.sass-cache/
+
+# Coverage reports
+coverage/

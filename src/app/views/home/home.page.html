@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">
+      <a href="/" style="text-decoration: none; color: inherit;">
+        Restaurante
+      </a>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="irParaLogin()">
+        <ion-icon slot="icon-only" name="log-in"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="content-container">
+    <ion-button class="reservation-button" expand="block" (click)="irParaReservas()">Reservar</ion-button>
+  </div>
+</ion-content>
+
+<style>
+  ion-toolbar {
+    --background: #000;
+  }
+
+  ion-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ion-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ion-button {
+    --background: #000;
+    --color: #fff;
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .reservation-button {
+    --background: #B22222; /* Vermelho Rubro */
+    --color: #fff; /* Branco */
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  ion-content::part(scroll) {
+    background: transparent;
+  }
+</style>

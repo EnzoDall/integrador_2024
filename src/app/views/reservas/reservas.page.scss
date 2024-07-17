@@ -1,0 +1,118 @@
+.dark-background {
+    --background: #000;
+    color: #fff;
+  }
+  
+  ion-header {
+    --background: #ff0000;
+  }
+  
+  .submit-button {
+    font-weight: bold;
+  }
+  #container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  ion-header {
+    --background: #ff0000;
+  }
+/* Form Specific */
+
+ion-header {
+  --background:  rgb(181, 181, 181);
+  --background: #ad1621;
+  width: 99%;
+  text-align: center;
+}
+
+ion-content{
+  --background:#e9e8e8;
+  
+}
+ion-list{ 
+  border:2px solid rgb(181, 181, 181);
+ 
+  border-radius: 5px;
+  border-width: medium;
+
+  width: 500px;
+  margin: auto;
+  padding: 2px;
+}
+ion-toolbar {
+  text-align: center;
+  --ion-safe-area-top: 0;
+  --background: #c5000f;
+  text-transform: uppercase;
+  border:  rgb(181, 181, 181);
+  border-style: solid;
+  border-width: medium;
+
+}
+div{
+  --background:#e9e8e8;
+}
+
+
+
+.reservation-form {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  align-items: center;   /* Center items horizontally */
+  width: 80%;           /* Adjust width as needed */
+  margin: auto;         /* Center the form container itself */
+}
+
+.reservation-form {
+  ion-item {
+    margin-bottom: 15px;
+  }
+
+  ion-datetime {
+    --background: #f2f2f2;
+    --background-rgb: #bababa;
+    --wheel-highlight-background: #c6c5c5;;
+    --wheel-highlight-border-radius: 40px;
+    border:solid #c5000f;
+    border-radius: 10px;
+    padding: 5px;
+   // --wheel-fade-background-rgb: #ffffff;
+  }
+
+  ion-datetime::part(wheel-item) {
+    color: rgb(18, 16, 16);
+  }
+
+  ion-datetime::part(wheel-item active) {
+    color: rgb(0, 0, 0);
+  }
+
+
+  .submit-button {
+    margin-top: 20px;
+  }
+}
