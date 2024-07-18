@@ -11,6 +11,7 @@
 <ion-content fullscreen class="ion-padding">
   <div *ngIf="!diaSelecionado" class="dias-container">
     <ion-list>
+      <ion-card-title>Reservas</ion-card-title>
       <ion-item lines="none" *ngFor="let dia of diasDisponiveis"
         (click)="selecionarDia(dia)" class="dia-item">
         <ion-button fill="solid" expand="block" color="danger"
